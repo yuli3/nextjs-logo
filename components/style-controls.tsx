@@ -114,7 +114,7 @@ export function StyleControls({ type, style, onChange }: StyleControlsProps) {
             <Label>Size</Label>
             <Slider
               min={16}
-              max={512}
+              max={250}
               step={1}
               value={[iconStyle.size]}
               onValueChange={([value]) => onChange({ size: value })}
@@ -209,7 +209,7 @@ export function StyleControls({ type, style, onChange }: StyleControlsProps) {
             <Label>Font Size</Label>
             <Slider
               min={12}
-              max={72}
+              max={120}
               step={1}
               value={[textStyle.fontSize]}
               onValueChange={([value]) => onChange({ fontSize: value })}
