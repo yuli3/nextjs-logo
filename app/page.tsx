@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import LogoGenerator from "@/components/logo-generator"
+import { ErrorBoundary } from "@/components/error-boundary"
 
 export const metadata: Metadata = {
   title: "Logo Generator - Create Beautiful Logos",
@@ -12,6 +13,9 @@ export const metadata: Metadata = {
 }
 
 export default function Page() {
-  return <LogoGenerator />
+  return (    
+  <ErrorBoundary>
+    <LogoGenerator />
+  </ErrorBoundary>)
 }
 

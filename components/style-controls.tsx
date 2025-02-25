@@ -35,16 +35,22 @@ export function StyleControls({ type, style, onChange }: StyleControlsProps) {
         <div className="space-y-2">
           <Label>Background Color</Label>
           <div className="grid grid-cols-2 gap-4">
-            <Input
-              type="color"
-              value={style.gradientColorFrom || "#ffffff"}
-              onChange={(e) => onChange({ gradientColorFrom: e.target.value })}
-            />
-            <Input
-              type="color"
-              value={style.gradientColorTo || style.gradientColorFrom || "#ffffff"}
-              onChange={(e) => onChange({ gradientColorTo: e.target.value })}
-            />
+            <div className="space-y-1">
+              <Label className="text-xs">From</Label>
+              <Input
+                type="color"
+                value={style.gradientColorFrom || "#ffffff"}
+                onChange={(e) => onChange({ gradientColorFrom: e.target.value })}
+              />
+            </div>
+            <div className="space-y-1">
+              <Label className="text-xs">To</Label>
+              <Input
+                type="color"
+                value={style.gradientColorTo || style.gradientColorFrom || "#ffffff"}
+                onChange={(e) => onChange({ gradientColorTo: e.target.value })}
+              />
+            </div>
           </div>
         </div>
 
@@ -113,6 +119,7 @@ export function StyleControls({ type, style, onChange }: StyleControlsProps) {
               value={[iconStyle.size]}
               onValueChange={([value]) => onChange({ size: value })}
             />
+            <div className="text-xs text-muted-foreground text-right">{iconStyle.size}px</div>
           </div>
 
           <div className="space-y-2">
@@ -124,6 +131,7 @@ export function StyleControls({ type, style, onChange }: StyleControlsProps) {
               value={[iconStyle.rotate]}
               onValueChange={([value]) => onChange({ rotate: value })}
             />
+            <div className="text-xs text-muted-foreground text-right">{iconStyle.rotate}°</div>
           </div>
 
           <div className="space-y-2">
@@ -135,6 +143,7 @@ export function StyleControls({ type, style, onChange }: StyleControlsProps) {
               value={[iconStyle.strokeWidth]}
               onValueChange={([value]) => onChange({ strokeWidth: value })}
             />
+            <div className="text-xs text-muted-foreground text-right">{iconStyle.strokeWidth}</div>
           </div>
 
           <div className="space-y-2">
@@ -146,6 +155,7 @@ export function StyleControls({ type, style, onChange }: StyleControlsProps) {
               value={[iconStyle.opacity]}
               onValueChange={([value]) => onChange({ opacity: value })}
             />
+            <div className="text-xs text-muted-foreground text-right">{Math.round(iconStyle.opacity * 100)}%</div>
           </div>
 
           <div className="grid grid-cols-2 gap-4">
@@ -204,6 +214,7 @@ export function StyleControls({ type, style, onChange }: StyleControlsProps) {
               value={[textStyle.fontSize]}
               onValueChange={([value]) => onChange({ fontSize: value })}
             />
+            <div className="text-xs text-muted-foreground text-right">{textStyle.fontSize}px</div>
           </div>
 
           <div className="space-y-2">
@@ -215,6 +226,7 @@ export function StyleControls({ type, style, onChange }: StyleControlsProps) {
               value={[textStyle.fontWeight]}
               onValueChange={([value]) => onChange({ fontWeight: value })}
             />
+            <div className="text-xs text-muted-foreground text-right">{textStyle.fontWeight}</div>
           </div>
 
           <div className="grid grid-cols-2 gap-4">
@@ -241,6 +253,7 @@ export function StyleControls({ type, style, onChange }: StyleControlsProps) {
               value={[textStyle.borderWidth]}
               onValueChange={([value]) => onChange({ borderWidth: value })}
             />
+            <div className="text-xs text-muted-foreground text-right">{textStyle.borderWidth}px</div>
           </div>
         </div>
       )}

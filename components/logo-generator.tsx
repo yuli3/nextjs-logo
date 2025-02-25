@@ -8,15 +8,21 @@ import { Input } from "@/components/ui/input"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
+import { Badge } from "@/components/ui/badge"
 import { Undo2, Redo2, Search } from "lucide-react"
 import { DownloadDialog } from "@/components/download-dialog"
 import { StyleControls } from "@/components/style-controls"
 import { LogoPreview } from "@/components/logo-preview"
 import { ColorPalette } from "@/components/color-palette"
 import { LayoutSelector } from "@/components/layout-selector"
+import { Footer } from "@/components/footer"
 import { downloadLogo } from "@/utils/download"
 import { getLayout } from "@/utils/layouts"
 import type { LogoType, DownloadOptions, ColorPalette as ColorPaletteType } from "@/types/logo"
+import Link from "next/link"
+
+// Popular search keywords for suggestions
+const searchSuggestions = ["arrow", "cloud", "star", "heart", "user", "home", "settings", "tool", "chart", "music"]
 
 export default function LogoGenerator() {
   const { state, dispatch, canUndo, canRedo } = useLogoState()
@@ -80,7 +86,7 @@ export default function LogoGenerator() {
     <div className="sticky top-0 z-10 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between gap-4">
-          <h1 className="text-2xl font-bold">Logo Generator ✨</h1>
+          <h1 className="text-2xl font-bold"><Link href="/">Logo Generator ✨</Link></h1>
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
               <Button
@@ -143,6 +149,22 @@ export default function LogoGenerator() {
                 <Button variant="outline" size="icon" aria-label="Search">
                   <Search className="h-4 w-4" />
                 </Button>
+              </div>
+
+              <div className="space-y-2">
+                <p className="text-sm text-muted-foreground">You may like this...</p>
+                <div className="flex flex-wrap gap-2">
+                  {searchSuggestions.map((suggestion) => (
+                    <Badge
+                      key={suggestion}
+                      variant="outline"
+                      className="cursor-pointer hover:bg-accent"
+                      onClick={() => handleSearch(suggestion)}
+                    >
+                      {suggestion}
+                    </Badge>
+                  ))}
+                </div>
               </div>
 
               <div className="grid grid-cols-4 gap-2">
@@ -254,6 +276,7 @@ export default function LogoGenerator() {
           )}
         </div>
       </main>
+      <Footer />
     </div>
   )
 }

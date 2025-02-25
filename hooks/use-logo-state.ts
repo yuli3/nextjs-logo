@@ -10,7 +10,7 @@ const appleWhitePalette = colorPalettes.find((p) => p.id === "apple-white")!
 const initialLogoState: LogoState = {
   type: "icon",
   iconStyle: {
-    size: 48,
+    size: 64, // Default size for icon
     rotate: 0,
     strokeWidth: 2,
     color: appleWhitePalette.colors.primary,
@@ -19,12 +19,12 @@ const initialLogoState: LogoState = {
     absoluteStrokeWidth: false,
     gradientColorFrom: appleWhitePalette.colors.gradientFrom,
     gradientColorTo: appleWhitePalette.colors.gradientTo,
-    borderRadius: "none",
+    borderRadius: "8px", // Default border radius
     preserveAspectRatio: "xMidYMid meet",
   },
   textStyle: {
-    text: "",
-    fontSize: 24,
+    text: "AB", // Default text
+    fontSize: 36, // Default font size
     fontWeight: 600,
     color: appleWhitePalette.colors.primary,
     borderWidth: 0,
@@ -32,7 +32,7 @@ const initialLogoState: LogoState = {
     fontFamily: "sans",
     gradientColorFrom: appleWhitePalette.colors.gradientFrom,
     gradientColorTo: appleWhitePalette.colors.gradientTo,
-    borderRadius: "none",
+    borderRadius: "8px", // Default border radius
   },
   background: {
     rounded: "lg",
