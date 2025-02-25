@@ -18,22 +18,19 @@ export async function generateMetadata() : Promise<Metadata> {
   return {
     title: {
       template: "%s",
-      default: "ahoxy.com",
+      default: "Logo Generator | ahoxy.com",
     },
     description:
-      "Door to online tools, A collection of AI tools, content creation helpers, and games.",
+      "Create your logo in minutes with our free and easy-to-use logo generator. Perfect for startups, solo entrepreneurs, and anyone looking for a quick and hassle-free branding solution. No design experience needed – simply choose your style, customize, and download your professional-looking logo today!",
     keywords: [
-      "AI tools",
-      "online games",
-      "content creation",
-      "MBTI",
-      "balance games",
+      "Free Logo Maker","Easy Logo Creator", "Quick Logo Generator","Simple Logo Design","DIY Logo Tool","Startup Logo Maker"
+      ,"Small Business Logo Creator", "Favicon Generator", "Text to Logo", "Icon to Logo", "One-click Logo"
     ],
     authors: [{ name: "ahoxy" }],
     openGraph: {
       title: "Door to online tools, A collection of AI tools, content creation helpers, and games.",
       description:
-        "Get personalized outfit recommendations for various social situations and cultural contexts.",
+        "Create your logo in minutes with our free and easy-to-use logo generator. Perfect for startups, solo entrepreneurs, and anyone looking for a quick and hassle-free branding solution. No design experience needed – simply choose your style, customize, and download your professional-looking logo today!",
       url: process.env.NEXT_PUBLIC_BASE_URL,
       siteName: "ahoxy",
       images: [
@@ -51,7 +48,7 @@ export async function generateMetadata() : Promise<Metadata> {
       card: "summary_large_image",
       title: "Door to Online Tools",
       description:
-        "Get personalized outfit recommendations for various social situations and cultural contexts.",
+        "Create your logo in minutes with our free and easy-to-use logo generator. Perfect for startups, solo entrepreneurs, and anyone looking for a quick and hassle-free branding solution. No design experience needed – simply choose your style, customize, and download your professional-looking logo today!",
       images: [process.env.NEXT_PUBLIC_BASE_URL + "/ms-icon-310x310.png"],
     },
     robots: "index, follow",

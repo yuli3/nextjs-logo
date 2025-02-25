@@ -1,0 +1,3 @@
+User-agent: *
+Allow:/
+Sitemap: http://logo.ahoxy.com/sitemap.xml
